@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -184,10 +190,32 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807031847584_initial migration, student class, ctrl, and dbcontext created.cs" />
+    <Compile Include="Migrations\201807031847584_initial migration, student class, ctrl, and dbcontext created.Designer.cs">
+      <DependentUpon>201807031847584_initial migration, student class, ctrl, and dbcontext created.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807031924078_created teacher class, ctrl andupdated dbcontext.cs" />
+    <Compile Include="Migrations\201807031924078_created teacher class, ctrl andupdated dbcontext.Designer.cs">
+      <DependentUpon>201807031924078_created teacher class, ctrl andupdated dbcontext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807032128454_testing complete, all successful.cs" />
+    <Compile Include="Migrations\201807032128454_testing complete, all successful.Designer.cs">
+      <DependentUpon>201807032128454_testing complete, all successful.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807051742304_updated the post function for student.cs" />
+    <Compile Include="Migrations\201807051742304_updated the post function for student.Designer.cs">
+      <DependentUpon>201807051742304_updated the post function for student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PodiumDBContext.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,7 +274,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -276,6 +303,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201807031847584_initial migration, student class, ctrl, and dbcontext created.resx">
+      <DependentUpon>201807031847584_initial migration, student class, ctrl, and dbcontext created.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807031924078_created teacher class, ctrl andupdated dbcontext.resx">
+      <DependentUpon>201807031924078_created teacher class, ctrl andupdated dbcontext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807032128454_testing complete, all successful.resx">
+      <DependentUpon>201807032128454_testing complete, all successful.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807051742304_updated the post function for student.resx">
+      <DependentUpon>201807051742304_updated the post function for student.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
