@@ -10,6 +10,7 @@ namespace Podium.Models
 		public int Id { get; set; }
 		public string Firstname { get; set; }
 		public string Lastname { get; set; }
+		public string Password { get; set; }
 		public int Status { get; set; } = 1;
 		public bool Loggedin { get; set; } = true;
 		public string Classname { get; set; }

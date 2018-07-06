@@ -1,4 +1,5 @@
 ﻿using Podium.Models;
+using Podium.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +34,17 @@ namespace Podium.Controllers
 			if (id == null)
 				return null;
 			return db.Students.Find(id);
+		}
+
+		[HttpGet]
+		[ActionName("GetStudent")]
+		public Student GetStudent(LoginAuthentication login)
+		{
+			if (login == null)
+				return null;
+			return db.Students.SingleOrDefault(student => student.Firstname == login.Firstname  &&
+					 student.Lastname == login.Lastname &&
+					student.Password == login.Password);
 		}
 		[HttpPost]
 		[ActionName("Create")]
